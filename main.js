@@ -49,20 +49,3 @@ cardRow.insertAdjacentHTML("beforeend", card);
 
     });
 }
-    document.querySelectorAll(".btn-show-modal").forEach(btn => {
-        btn.addEventListener("click", function() {
-            const product = JSON.parse(this.getAttribute("data-product"));
-
-            // Actualizamos el modal con la info del producto
-            document.getElementById("productModalLabel").textContent = product.title;
-            document.getElementById("productModalBody").innerHTML = `
-                <img src="${product.image}" class="img-fluid mb-3" alt="${product.title}">
-                <p>${product.description}</p>
-                <p><strong>Precio:</strong> $${product.price} USD</p>
-            `;
-
-            // Mostramos el modal
-            const modal = new bootstrap.Modal(document.getElementById("productModal"));
-            modal.show();
-        });
-    });
