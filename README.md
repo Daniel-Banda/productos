@@ -14,9 +14,9 @@ Este proyecto realiza solicitudes `fetch` a una API externa para mostrar un cat√
 
 ## Tecnolog√≠as utilizadas
 
-- HTML5 y CSS3  
-- JavaScript ES6+  
-- Bootstrap 5.3  
+- HTML  
+- JavaScript   
+- Bootstrap  
 - [FakeStoreAPI](https://fakestoreapi.com/)
 
 ![Vista Previa del Proyecto](https://github.com/Daniel-Banda/productos/blob/main/assets/Captura%20de%20pantalla%202025-04-11%20154557.png?raw=true)
