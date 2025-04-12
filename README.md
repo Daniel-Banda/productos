@@ -1,5 +1,7 @@
 # Catálogo de Productos con API Externa
 
+[Visita la web](https://daniel-banda.github.io/productos/)
+
 Este proyecto realiza solicitudes `fetch` a una API externa para mostrar un catálogo de productos. Los datos son obtenidos desde [FakeStoreAPI](https://fakestoreapi.com/), una API gratuita que simula un e-commerce real.
 
 ---
@@ -19,4 +21,4 @@ Este proyecto realiza solicitudes `fetch` a una API externa para mostrar un cat�
 - Bootstrap  
 - [FakeStoreAPI](https://fakestoreapi.com/)
 
-![Vista Previa del Proyecto](https://github.com/Daniel-Banda/productos/blob/main/assets/Captura%20de%20pantalla%202025-04-11%20154557.png?raw=true)
+![Vista Previa del Proyecto](https://github.com/Daniel-Banda/productos/blob/main/assets/image.png?raw=true)
