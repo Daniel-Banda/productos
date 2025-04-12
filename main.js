@@ -1,14 +1,16 @@
 const main = document.getElementsByTagName("main").item(0);
+const ulMenu = document.getElementById("ulMenu");
+const cardRow = document.getElementById("cardRow");
 const URLMain = "https://fakestoreapi.com/products/";
 
-function getData(){
+function getData(cat){
     const options = {"method": "GET"};
-    fetch(URLMain, options)
+    fetch(URLMain+cat, options)
     .then((response) =>{
-        console.log(response);
         response.json().then((res)=>{
             // console.log(res.length);
             // console.log(res[10].title);
+                 cardRow.innerHTML = "";
             createCards(res);
         });
     })
@@ -20,15 +22,37 @@ function getData(){
     });
 }//getData
 
-getData();
+function getCategories(){
+  const options = {"method": "GET"};
+  fetch(URLMain+"categories/", options)
+  .then((response) => {
+      response.json().then((res)=>{
+        //console.log("categories:",res);
+        res.forEach((cat)=>{
+          ulMenu.insertAdjacentHTML("afterbegin",
+          `<li><a class="dropdown-item" style="cursor: pointer;" onclick="getData('category/${(cat.replace("'","%27"))}');">${cat}</a></li>`);
+        })
+      });
+  })
+  .catch((err)=>{
+      main.insertAdjacentHTML("beforeend",
+          `<div class="alert alert-danger" role="alert">
+              ${err.message}
+              </div>`);
+  });
+}//getCategories
+
+getCategories();
+getData("");
 
 function createCards(prods){
+
     prods.forEach(product => {
         const shortDescription = product.description.length > 120
             ? product.description.substring(0, 60) + "..."
             : product.description;
 
-        const card = `
+       const card = `
 <div class="col-md-4 mb-4 mb-4 d-flex">
 <div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">
@@ -49,3 +73,5 @@ cardRow.insertAdjacentHTML("beforeend", card);
 
     });
 }
+
+
