@@ -8,8 +8,7 @@ function getData(cat){
     fetch(URLMain+cat, options)
     .then((response) =>{
         response.json().then((res)=>{
-            // console.log(res.length);
-            // console.log(res[10].title);
+
                  cardRow.innerHTML = "";
             createCards(res);
         });
